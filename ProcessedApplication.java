@@ -1,28 +1,54 @@
 public class ProcessedApplication extends Application {
+    private boolean status; // true for approved, false for rejected
+    private LoanEstimate loanEstimate;
 
-    // create a constructor to initialize ProcessedApplication's objects.
-    // and a list of methods to get and retrieve ProcessedApplication' information.
-    // Including all information about Application,
-    // ProcessedApplication usually have the following type of information
+    public ProcessedApplication(int applicationNumber, Borrower borrower, Lender lender, Property property) {
+        super(applicationNumber, borrower, lender, property);
+        this.status = determineStatus(borrower, lender);
+        this.loanEstimate = createLoanEstimate(status, borrower, property, lender);
+    }
 
+    private boolean determineStatus(Borrower borrower, Lender lender) {
+        double totalDebts = borrower.getDebts().calculateTotalDebts();
+        double totalAssets = borrower.getAssets().calculateTotalAssets();
+        double totalIncome = borrower.getIncome().getTotalIncome();
+        double dtiRatio = lender.getDtiRatio();
+        CreditHistory creditHistory = borrower.getCreditHistory();
 
-    /*
-    * Status (Approved or rejected)
-    * LoanEstimate
+        if (totalDebts >= totalAssets ||
+            totalDebts / totalIncome > dtiRatio ||
+            creditHistory.hasOutstandingJudgments() ||
+            creditHistory.hasBankruptcyInLastSevenYears() ||
+            creditHistory.hasForeclosureInLastSevenYears() ||
+            creditHistory.isPartyToLawsuit() ||
+            creditHistory.hasLoanResultedInForeclosure()) {
+            return false; // Rejected
+        }
 
-  // Define a method to determine status based on the following:
- //   if total debts >= total assets
- //   or total debts/total income > Debt-to-income (DTI) ratio (of the lender)
- //   or if there is any outstanding judgments against borrower
-    //or borrower has been declared bankrupt within the past 7 years.
-    //or borrower had property foreclosed upon or given title or deed in lieu thereof in the last 7 years
-    //or borrower is a party to a lawsuit
-    //or borrower has  directly or indirectly been obligated on any loan which resulted in foreclosure, transfer of title in lieu of foreclosure, or judgment.
+        return true; // Approved
+    }
 
+    private LoanEstimate createLoanEstimate(boolean status, Borrower borrower, Property property, Lender lender) {
+        if (status) {
+            double loanAmount = property.getExpectedSalesPrice();
+            int loanTerm = 30; // Assuming a 30-year loan term (adjust as needed)
+            double interestRate = lender.getInterestRate();
+            double mortgageInsurance = 0.0; // Assuming no mortgage insurance (adjust as needed)
+            double estimatedEscrow = property.getRealEstateTaxes() / 12.0 + property.getHoaDues() / 12.0; // Assuming escrow includes property taxes and HOA dues
+            return new LoanEstimate(borrower.getName(), loanAmount, loanTerm, interestRate, mortgageInsurance, estimatedEscrow);
+        } else {
+            return new LoanEstimate("", -1, -1, -1, -1, -1);
+        }
+    }
 
-    // Define a method to create the LoanEstimate (if status is approved) based on
-    // the information of property's price, lender fees, interest rate
-    // otherwise (status is rejected) LoanEstimate attributes will be -1 (a number to declare rejection status)
-*/
+    // Getters and setters
+    public boolean isStatus() {
+        return status;
+    }
+
+    public LoanEstimate getLoanEstimate() {
+        return loanEstimate;
+    }
 }
+
 

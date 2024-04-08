@@ -1,3 +1,21 @@
 #BlueJ class context
 comment0.target=Employment
-numComments=1
+comment1.params=employerName\ employerPhone\ employerStreetAddress\ lengthOfTime\ positionTitle\ income
+comment1.target=Employment(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ java.lang.String,\ Income)
+comment2.params=
+comment2.target=java.lang.String\ getEmployerName()
+comment3.params=
+comment3.target=java.lang.String\ getEmployerPhone()
+comment4.params=
+comment4.target=java.lang.String\ getEmployerStreetAddress()
+comment5.params=
+comment5.target=int\ getLengthOfTime()
+comment6.params=
+comment6.target=java.lang.String\ getPositionTitle()
+comment7.params=
+comment7.target=Income\ getIncome()
+comment8.params=
+comment8.target=double\ getSalary()
+comment9.params=
+comment9.target=double\ calculateSalary()
+numComments=10

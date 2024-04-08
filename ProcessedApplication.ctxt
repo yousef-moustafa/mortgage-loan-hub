@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=ProcessedApplication
+comment1.params=applicationNumber\ borrower\ lender\ property
+comment1.target=ProcessedApplication(int,\ Borrower,\ Lender,\ Property)
+comment2.params=borrower\ lender
+comment2.target=boolean\ determineStatus(Borrower,\ Lender)
+comment3.params=status\ borrower\ property\ lender
+comment3.target=LoanEstimate\ createLoanEstimate(boolean,\ Borrower,\ Property,\ Lender)
+comment4.params=
+comment4.target=boolean\ isStatus()
+comment5.params=
+comment5.target=LoanEstimate\ getLoanEstimate()
+numComments=6

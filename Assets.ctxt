@@ -1,3 +1,17 @@
 #BlueJ class context
 comment0.target=Assets
-numComments=1
+comment1.params=bankAccounts\ properties\ investments\ proceedsFromSaleOfHome\ giftedFunds
+comment1.target=Assets(BankAccount[],\ Property[],\ double[],\ double,\ double)
+comment2.params=
+comment2.target=BankAccount[]\ getBankAccounts()
+comment3.params=
+comment3.target=Property[]\ getProperties()
+comment4.params=
+comment4.target=double[]\ getInvestments()
+comment5.params=
+comment5.target=double\ getProceedsFromSaleOfHome()
+comment6.params=
+comment6.target=double\ getGiftedFunds()
+comment7.params=
+comment7.target=double\ calculateTotalAssets()
+numComments=8

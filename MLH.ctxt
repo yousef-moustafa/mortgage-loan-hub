@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=MLH
+comment1.params=numOFBorrowers\ numOFProperties\ numOFLenders
+comment1.target=MortgageMarket\ initializeMortgageMarket(int,\ int,\ int)
+comment2.params=b\ p\ l
+comment2.target=Application\ apply(Borrower,\ Property,\ Lender)
+comment3.params=a
+comment3.target=ProcessedApplication\ process(Application)
+comment4.params=pa
+comment4.target=ClosedApplication\ close(ProcessedApplication)
+numComments=5

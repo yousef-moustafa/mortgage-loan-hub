@@ -1,14 +1,22 @@
-public class ClosedApplication extends ProcessedApplication{
-    // create a constructor to initialize ClosedApplication's objects.
-    // and a list of methods to get and retrieve ClosedApplication' information.
-    // Including all information about ProcessedApplication,
-    // ClosedApplication usually have the following type of information
+import java.time.LocalDate;
 
-/*
-*
-*  ClosingDisclosure
-* */
+public class ClosedApplication extends ProcessedApplication {
+    // Fields
+    private ClosingDisclosure closingDisclosure;
 
-// define a method to create a closing disclosure
+    // Constructor
+    public ClosedApplication(int applicationNumber, Borrower borrower, Lender lender, Property property, String loanId, LocalDate closingDate) {
+        super(applicationNumber, borrower, lender, property);
+        this.closingDisclosure = new ClosingDisclosure(loanId, closingDate);
+    }
 
+    // Getter for ClosingDisclosure
+    public ClosingDisclosure getClosingDisclosure() {
+        return closingDisclosure;
+    }
+
+    // Method to create a closing disclosure
+    public void createClosingDisclosure(String loanId, LocalDate closingDate) {
+        this.closingDisclosure = new ClosingDisclosure(loanId, closingDate);
+    }
 }

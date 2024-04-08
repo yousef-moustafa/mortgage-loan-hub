@@ -1,3 +1,25 @@
 #BlueJ class context
 comment0.target=Debts
-numComments=1
+comment1.params=currentMortgage\ liens\ alimony\ childSupport\ carLoans\ creditCards\ realEstateTaxes\ homeownerAssociationDues\ hazardInsurance
+comment1.target=Debts(double,\ double,\ double,\ double,\ double,\ double,\ double,\ double,\ double)
+comment10.params=
+comment10.target=double\ getHazardInsurance()
+comment11.params=
+comment11.target=double\ calculateTotalDebts()
+comment2.params=
+comment2.target=double\ getCurrentMortgage()
+comment3.params=
+comment3.target=double\ getLiens()
+comment4.params=
+comment4.target=double\ getAlimony()
+comment5.params=
+comment5.target=double\ getChildSupport()
+comment6.params=
+comment6.target=double\ getCarLoans()
+comment7.params=
+comment7.target=double\ getCreditCards()
+comment8.params=
+comment8.target=double\ getRealEstateTaxes()
+comment9.params=
+comment9.target=double\ getHomeownerAssociationDues()
+numComments=12

@@ -1,3 +1,21 @@
 #BlueJ class context
 comment0.target=Income
-numComments=1
+comment1.params=baseEmploymentIncome\ overtime\ bonuses\ commissions\ dividendsInterest\ netRentalIncome\ otherIncome
+comment1.target=Income(double,\ double,\ double,\ double,\ double,\ double,\ double)
+comment2.params=
+comment2.target=double\ getBaseEmploymentIncome()
+comment3.params=
+comment3.target=double\ getOvertime()
+comment4.params=
+comment4.target=double\ getBonuses()
+comment5.params=
+comment5.target=double\ getCommissions()
+comment6.params=
+comment6.target=double\ getDividendsInterest()
+comment7.params=
+comment7.target=double\ getNetRentalIncome()
+comment8.params=
+comment8.target=double\ getOtherIncome()
+comment9.params=
+comment9.target=double\ getTotalIncome()
+numComments=10
