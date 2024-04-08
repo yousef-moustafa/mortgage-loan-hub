@@ -8,6 +8,9 @@ public class Borrower {
     private Assets assets;
     private Debts debts;
     private CreditHistory creditHistory;
+    
+    public Borrower() {
+    }
 
     public Borrower(String name, String ssn, String homePhone, String dob, Employment employment, Income income, Assets assets, Debts debts, CreditHistory creditHistory) {
         this.name = name;

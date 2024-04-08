@@ -5,6 +5,10 @@ public class Property {
     private double size;
     private double realEstateTaxes;
     private double hoaDues;
+    
+    public Property(){
+        
+    }
 
     public Property(String streetAddress, double expectedSalesPrice, String homeType, double size, double realEstateTaxes, double hoaDues) {
         this.streetAddress = streetAddress;

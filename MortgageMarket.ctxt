@@ -1,3 +1,17 @@
 #BlueJ class context
 comment0.target=MortgageMarket
-numComments=1
+comment1.params=
+comment1.target=MortgageMarket()
+comment2.params=borrower
+comment2.target=void\ addBorrower(Borrower)
+comment3.params=lender
+comment3.target=void\ addLender(Lender)
+comment4.params=property
+comment4.target=void\ addProperty(Property)
+comment5.params=
+comment5.target=java.util.List\ getBorrowers()
+comment6.params=
+comment6.target=java.util.List\ getLenders()
+comment7.params=
+comment7.target=java.util.List\ getProperties()
+numComments=8

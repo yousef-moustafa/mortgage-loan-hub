@@ -5,6 +5,10 @@ public class Lender {
     private double interestRate;
     private double lenderFees;
     private double closingCosts;
+    
+    public Lender(){
+        
+    }
 
     public Lender(int lenderNumber, double dtiRatio, double downPaymentRequirement, double interestRate, double lenderFees, double closingCosts) {
         this.lenderNumber = lenderNumber;
