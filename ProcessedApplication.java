@@ -50,5 +50,3 @@ public class ProcessedApplication extends Application {
         return loanEstimate;
     }
 }
-
-
