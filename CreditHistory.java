@@ -93,4 +93,18 @@ public class CreditHistory {
     public boolean hasLoanResultedInForeclosure() {
         return foreclosures > 0;
     }
+    
+    @Override
+    public String toString() {
+        return "CreditHistory{" +
+                "bankruptcies=" + bankruptcies +
+                ", collections=" + collections +
+                ", foreclosures=" + foreclosures +
+                ", delinquencies=" + delinquencies +
+                ", hasOutstandingJudgments=" + hasOutstandingJudgments +
+                ", lastBankruptcyDate=" + lastBankruptcyDate +
+                ", foreclosureDates=" + foreclosureDates +
+                ", isPartyToLawsuit=" + isPartyToLawsuit +
+                '}';
+    }
 }

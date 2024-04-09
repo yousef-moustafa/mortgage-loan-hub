@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Debts {
     // Fields
     private double currentMortgage;
@@ -68,5 +70,20 @@ public class Debts {
         return currentMortgage + liens + alimony + childSupport + carLoans +
                creditCards + realEstateTaxes + homeownerAssociationDues +
                hazardInsurance;
+    }
+    
+    @Override
+    public String toString() {
+        return "Debts{" +
+                "currentMortgage=" + currentMortgage +
+                ", liens=" + liens +
+                ", alimony=" + alimony +
+                ", childSupport=" + childSupport +
+                ", carLoans=" + carLoans +
+                ", creditCards=" + creditCards +
+                ", realEstateTaxes=" + realEstateTaxes +
+                ", homeownerAssociationDues=" + homeownerAssociationDues +
+                ", hazardInsurance=" + hazardInsurance +
+                '}';
     }
 }

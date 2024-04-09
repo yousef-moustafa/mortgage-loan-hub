@@ -54,4 +54,16 @@ public class Employment {
         return income.getBaseEmploymentIncome() + income.getOvertime() +
                 income.getBonuses() + income.getCommissions();
     }
+    
+    @Override
+    public String toString() {
+        return "Employment{" +
+                "employerName='" + employerName + '\'' +
+                ", employerPhone='" + employerPhone + '\'' +
+                ", employerStreetAddress='" + employerStreetAddress + '\'' +
+                ", lengthOfTime=" + lengthOfTime +
+                ", positionTitle='" + positionTitle + '\'' +
+                ", income=" + income +
+                '}';
+    }
 }

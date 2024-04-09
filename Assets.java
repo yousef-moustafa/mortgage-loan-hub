@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Assets {
     // Fields
     private BankAccount[] bankAccounts;
@@ -63,5 +65,16 @@ public class Assets {
         totalAssets += giftedFunds;
 
         return totalAssets;
+    }
+    
+    @Override
+    public String toString() {
+        return "Assets{" +
+                "bankAccounts=" + Arrays.toString(bankAccounts) +
+                ", properties=" + Arrays.toString(properties) +
+                ", investments=" + Arrays.toString(investments) +
+                ", proceedsFromSaleOfHome=" + proceedsFromSaleOfHome +
+                ", giftedFunds=" + giftedFunds +
+                '}';
     }
 }

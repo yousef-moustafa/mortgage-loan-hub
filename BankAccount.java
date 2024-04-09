@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.*;
 
 public class BankAccount {
     // Fields
@@ -75,5 +76,22 @@ public class BankAccount {
 
     public double getClosedBalance() {
         return closedBalance;
+    }
+    
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "accountNumber='" + accountNumber + '\'' +
+                ", accountType='" + accountType + '\'' +
+                ", isOpen=" + isOpen +
+                ", openDate=" + openDate +
+                ", accountHolders=" + Arrays.toString(accountHolders) +
+                ", currentBalance=" + currentBalance +
+                ", balanceHistory=" + Arrays.toString(balanceHistory) +
+                ", interestRate=" + interestRate +
+                ", interestPaid=" + interestPaid +
+                ", closedDate=" + closedDate +
+                ", closedBalance=" + closedBalance +
+                '}';
     }
 }

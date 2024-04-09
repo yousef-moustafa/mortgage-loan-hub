@@ -1,3 +1,9 @@
+import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.*;
+
 public class MortgageImplementerTest {
 
     public static void main(String[] args) {
@@ -17,6 +23,34 @@ public class MortgageImplementerTest {
         borrower.setHomePhone("123-456-7890");
         borrower.setDob("1990-01-01");
         // Set other borrower attributes using setter methods
+        Income income = new Income(50000, 10000, 5000, 2000, 1000, 2000, 3000);
+        Employment employment = new Employment("Example Corp", "123-456-7890", "123 Main St", 2, "Software Engineer", income);
+        
+        String[] accountHolders = {"John Doe", "Jane Doe"};
+        double[] balanceHistory = {1000, 1500, 2000}; 
+        Date openDate = new Date(); 
+        Date closedDate = null; 
+        BankAccount bankAccount = new BankAccount("123456789", "Savings", true, openDate, accountHolders, 2000, balanceHistory, 0.05, 100, closedDate, 0);
+        Property property1 = new Property("123 Main St", 250000, "Single Family", 2000, 3000, 100);
+        
+        BankAccount[] bankAccounts = {bankAccount};
+        Property[] properties = {property1};
+        double[] investments = {5000, 10000}; 
+        Assets assets = new Assets(bankAccounts, properties, investments, 0, 0);
+        
+        Debts debts = new Debts(200000, 0, 500, 200, 15000, 5000, 3000, 100, 500);
+        
+        List<LocalDate> foreclosureDates = new ArrayList<>();
+        foreclosureDates.add(LocalDate.of(2020, 5, 15)); 
+        CreditHistory creditHistory = new CreditHistory(1, 2, 0, 3, true, LocalDate.of(2019, 10, 20), foreclosureDates, false);
+        
+        borrower.setEmployment(employment);
+        borrower.setIncome(income);
+        borrower.setAssets(assets);
+        borrower.setDebts(debts);
+        borrower.setCreditHistory(creditHistory);
+        
+        //System.out.println(borrower);
 
         // Assign values to lender1 attributes using setter methods
         lender1.setLenderNumber(1);

@@ -96,4 +96,19 @@ public class Borrower {
     public void setCreditHistory(CreditHistory creditHistory) {
         this.creditHistory = creditHistory;
     }
+    
+    @Override
+    public String toString() {
+        return "Borrower{" +
+                "name='" + name + '\'' +
+                ", ssn='" + ssn + '\'' +
+                ", homePhone='" + homePhone + '\'' +
+                ", dob='" + dob + '\'' +
+                ", employment=" + employment +
+                ", income=" + income +
+                ", assets=" + assets +
+                ", debts=" + debts +
+                ", creditHistory=" + creditHistory +
+                '}';
+    }
 }

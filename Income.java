@@ -55,4 +55,17 @@ public class Income {
         return baseEmploymentIncome + overtime + bonuses + commissions +
                dividendsInterest + netRentalIncome + otherIncome;
     }
+    
+    @Override
+    public String toString() {
+        return "Income{" +
+                "baseEmploymentIncome=" + baseEmploymentIncome +
+                ", overtime=" + overtime +
+                ", bonuses=" + bonuses +
+                ", commissions=" + commissions +
+                ", dividendsInterest=" + dividendsInterest +
+                ", netRentalIncome=" + netRentalIncome +
+                ", otherIncome=" + otherIncome +
+                '}';
+    }
 }

@@ -67,4 +67,16 @@ public class Property {
     public void setHoaDues(double hoaDues) {
         this.hoaDues = hoaDues;
     }
+    
+    @Override
+    public String toString() {
+        return "Property{" +
+                "streetAddress='" + streetAddress + '\'' +
+                ", expectedSalesPrice=" + expectedSalesPrice +
+                ", homeType='" + homeType + '\'' +
+                ", size=" + size +
+                ", realEstateTaxes=" + realEstateTaxes +
+                ", hoaDues=" + hoaDues +
+                '}';
+    }
 }
