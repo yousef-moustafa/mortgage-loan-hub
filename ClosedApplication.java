@@ -1,22 +1,29 @@
 import java.time.LocalDate;
 
 public class ClosedApplication extends ProcessedApplication {
-    // Fields
+    private static int nextLoanId = 1; // Static variable to track the next loan ID
+
     private ClosingDisclosure closingDisclosure;
 
     // Constructor
-    public ClosedApplication(int applicationNumber, Borrower borrower, Lender lender, Property property, String loanId, LocalDate closingDate) {
+    public ClosedApplication(int applicationNumber, Borrower borrower, Lender lender, Property property) {
         super(applicationNumber, borrower, lender, property);
-        this.closingDisclosure = new ClosingDisclosure(loanId, closingDate);
+        this.closingDisclosure = createClosingDisclosure();
     }
 
-    // Getter for ClosingDisclosure
+    // Method to create the ClosingDisclosure
+    private ClosingDisclosure createClosingDisclosure() {
+        String loanId = "Loan-" + nextLoanId++; // Generate a unique loan ID
+        LocalDate closingDate = LocalDate.now(); // Set the closing date to today's date
+        return new ClosingDisclosure(loanId, closingDate);
+    }
+
+    // Getters and setters
     public ClosingDisclosure getClosingDisclosure() {
         return closingDisclosure;
     }
 
-    // Method to create a closing disclosure
-    public void createClosingDisclosure(String loanId, LocalDate closingDate) {
-        this.closingDisclosure = new ClosingDisclosure(loanId, closingDate);
+    public void setClosingDisclosure(ClosingDisclosure closingDisclosure) {
+        this.closingDisclosure = closingDisclosure;
     }
 }

@@ -3,64 +3,71 @@ import java.util.*;
 public class MortgageImplementer implements MLH
 {
     // setting up all roles of mortgage market
+    private MortgageMarket mortgageMarket;
+    
+    //counter variable to generate unique application numbers
+    private static int applicationCounter = 1;
+    
     @Override
     public MortgageMarket initializeMortgageMarket(int numOfBorrowers, int numOfProperties, int numOfLenders) {
-        MortgageMarket mortgageMarket = new MortgageMarket();
-
-        Scanner scanner = new Scanner(System.in);
-
-        // Add borrowers
+        mortgageMarket = new MortgageMarket();
+        
+        // Initialize borrowers, lenders, and properties
         for (int i = 0; i < numOfBorrowers; i++) {
-            Borrower borrower = createBorrower();
+            Borrower borrower = new Borrower();
             mortgageMarket.addBorrower(borrower);
         }
         
-        // Add properties
-        for (int i = 0; i < numOfProperties; i++) {
-            Property property = createProperty();
-            mortgageMarket.addProperty(property);
-        }
-
-        // Add lenders
         for (int i = 0; i < numOfLenders; i++) {
-            Lender lender = createLender();
+            Lender lender = new Lender();
             mortgageMarket.addLender(lender);
         }
-
+        
+        for (int i = 0; i < numOfProperties; i++) {
+            Property property = new Property();
+            mortgageMarket.addProperty(property);
+        }
+        
         return mortgageMarket;
-    };
+    }
 
     // creates an application mortgage to a lender by a borrower on a property
     @Override
-    Application apply (Borrower b, Property p, Lender l){
+    public Application apply (Borrower b, Property p, Lender l){
         
+        // Create a new Application object with the provided borrower, property, and lender
+        Application application = new Application(applicationCounter++, b, l, p);
+        
+        // Return the created application
+        return application;  
     };
     
     //process the mortgage application to determine status and total price of transaction
     @Override
-    ProcessedApplication process (Application a){
-        
-    };
-
+    public ProcessedApplication process(Application a) {
+        Borrower borrower = a.getBorrower();
+        Lender lender = a.getLender();
+        Property property = a.getProperty();
+    
+        // Create a new ProcessedApplication object
+        ProcessedApplication processedApplication = new ProcessedApplication(a.getApplicationNumber(), borrower, lender, property);
+    
+        // Return the processed application object
+        return processedApplication;
+    }
+    
     //Closing process
     @Override
-    ClosedApplication close (ProcessedApplication pa){
-        
-    };
+    public ClosedApplication close(ProcessedApplication pa) {
+        Borrower borrower = pa.getBorrower();
+        Lender lender = pa.getLender();
+        Property property = pa.getProperty();
     
-    // Helper methods to create Borrower, Property, and Lender objects
-    private Borrower createBorrower() {
-        Borrower borrower = new Borrower(); 
-        return borrower;
+        // Create a new ClosedApplication object
+        ClosedApplication closedApplication = new ClosedApplication(pa.getApplicationNumber(), borrower, lender, property);
+    
+        // Return the closed application
+        return closedApplication;
     }
-
-    private Property createProperty() {
-        Property property = new Property();
-        return property;
-    }
-
-    private Lender createLender() {
-        Lender lender = new Lender();
-        return lender;
-    }
+    
 }

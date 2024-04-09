@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=ClosedApplication
-comment1.params=applicationNumber\ borrower\ lender\ property\ loanId\ closingDate
-comment1.target=ClosedApplication(int,\ Borrower,\ Lender,\ Property,\ java.lang.String,\ java.time.LocalDate)
+comment1.params=applicationNumber\ borrower\ lender\ property
+comment1.target=ClosedApplication(int,\ Borrower,\ Lender,\ Property)
 comment2.params=
-comment2.target=ClosingDisclosure\ getClosingDisclosure()
-comment3.params=loanId\ closingDate
-comment3.target=void\ createClosingDisclosure(java.lang.String,\ java.time.LocalDate)
-numComments=4
+comment2.target=ClosingDisclosure\ createClosingDisclosure()
+comment3.params=
+comment3.target=ClosingDisclosure\ getClosingDisclosure()
+comment4.params=closingDisclosure
+comment4.target=void\ setClosingDisclosure(ClosingDisclosure)
+numComments=5
