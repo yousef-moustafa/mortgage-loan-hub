@@ -23,26 +23,26 @@ public class MortgageImplementerTest {
         borrower.setHomePhone("123-456-7890");
         borrower.setDob("1990-01-01");
         // Set other borrower attributes using setter methods
-        Income income = new Income(50000, 10000, 5000, 2000, 1000, 2000, 3000);
-        Employment employment = new Employment("Example Corp", "123-456-7890", "123 Main St", 2, "Software Engineer", income);
+        Income income = new Income(100000, 10000, 15000, 0, 5000, 0, 0);
+        Employment employment = new Employment("Example Corp", "123-456-7890", "123 Main St", 5, "Software Engineer", income);
         
-        String[] accountHolders = {"John Doe", "Jane Doe"};
-        double[] balanceHistory = {1000, 1500, 2000}; 
-        Date openDate = new Date(); 
-        Date closedDate = null; 
-        BankAccount bankAccount = new BankAccount("123456789", "Savings", true, openDate, accountHolders, 2000, balanceHistory, 0.05, 100, closedDate, 0);
-        Property property1 = new Property("123 Main St", 250000, "Single Family", 2000, 3000, 100);
+        BankAccount[] bankAccounts = {
+        new BankAccount("12345678", "Checking", true, /* openDate */ null, new String[] {"John Doe"}, 50000.0, null, 0.05, 0.0, null, 0.0),
+        new BankAccount("87654321", "Savings", true, /* openDate */ null, new String[] {"John Doe"}, 100000.0, null, 0.1, 0.0, null, 0.0)
+        };
+        Property[] properties = {
+            new Property("123 Oak St, Anytown, CA 12345", 500000.0, "Single Family", 2000.0, 5000.0, 200.0)
+        };
+        double[] investments = {50000.0, 75000.0}; // Investments worth $125,000
+        double proceedsFromSaleOfHome = 0.0;
+        double giftedFunds = 0.0;
         
-        BankAccount[] bankAccounts = {bankAccount};
-        Property[] properties = {property1};
-        double[] investments = {5000, 10000}; 
-        Assets assets = new Assets(bankAccounts, properties, investments, 0, 0);
+        Assets assets = new Assets(bankAccounts, properties, investments, proceedsFromSaleOfHome, giftedFunds);
+
         
-        Debts debts = new Debts(200000, 0, 500, 200, 15000, 5000, 3000, 100, 500);
-        
+        Debts debts = new Debts(300000, 0.0, 0.0, 0.0, 15000, 5000, 0.0, 0.0, 0.0);
         List<LocalDate> foreclosureDates = new ArrayList<>();
-        foreclosureDates.add(LocalDate.of(2020, 5, 15)); 
-        CreditHistory creditHistory = new CreditHistory(1, 2, 0, 3, true, LocalDate.of(2019, 10, 20), foreclosureDates, false);
+        CreditHistory creditHistory = new CreditHistory(0, 0, 0, 0, false, null, foreclosureDates, false);
         
         borrower.setEmployment(employment);
         borrower.setIncome(income);
@@ -54,14 +54,14 @@ public class MortgageImplementerTest {
 
         // Assign values to lender1 attributes using setter methods
         lender1.setLenderNumber(1);
-        lender1.setDtiRatio(0.3);
+        lender1.setDtiRatio(3.5);
         lender1.setInterestRate(0.05);
         lender1.setLenderFees(1500);
         lender1.setClosingCosts(5000);
 
         // Assign values to lender2 attributes using setter methods
         lender2.setLenderNumber(2);
-        lender2.setDtiRatio(0.35);
+        lender2.setDtiRatio(3.5);
         lender2.setInterestRate(0.055);
         lender2.setDownPaymentRequirement(0.25);
         lender2.setLenderFees(2000);
