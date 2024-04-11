@@ -16,7 +16,7 @@ public class ProcessedApplication extends Application {
         CreditHistory creditHistory = borrower.getCreditHistory();
 
         if (totalDebts >= totalAssets ||
-            totalDebts / totalIncome > dtiRatio ||
+            (totalDebts / totalIncome) > dtiRatio ||
             creditHistory.hasOutstandingJudgments() ||
             creditHistory.hasBankruptcyInLastSevenYears() ||
             creditHistory.hasForeclosureInLastSevenYears() ||

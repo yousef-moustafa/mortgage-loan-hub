@@ -23,7 +23,7 @@ public class MortgageImplementerTest {
         borrower.setHomePhone("123-456-7890");
         borrower.setDob("1990-01-01");
         // Set other borrower attributes using setter methods
-        Income income = new Income(100000, 10000, 15000, 0, 5000, 0, 0);
+        Income income = new Income(150000, 10000, 15000, 0, 5000, 0, 0);
         Employment employment = new Employment("Example Corp", "123-456-7890", "123 Main St", 5, "Software Engineer", income);
         
         BankAccount[] bankAccounts = {
@@ -54,7 +54,7 @@ public class MortgageImplementerTest {
 
         // Assign values to lender1 attributes using setter methods
         lender1.setLenderNumber(1);
-        lender1.setDtiRatio(3.5);
+        lender1.setDtiRatio(3.0);
         lender1.setInterestRate(0.05);
         lender1.setLenderFees(1500);
         lender1.setClosingCosts(5000);
@@ -82,25 +82,48 @@ public class MortgageImplementerTest {
         // Process the applications
         ProcessedApplication processedApplication1 = mortgageImplementer.process(application1);
         ProcessedApplication processedApplication2 = mortgageImplementer.process(application2);
-
-        // Compare loan costs
-        double totalCost1 = processedApplication1.getLoanEstimate().getEstimatedTotalMonthlyPayment();
-        double totalCost2 = processedApplication2.getLoanEstimate().getEstimatedTotalMonthlyPayment();
-
-        // Choose the application with the lowest loan costs
-        ProcessedApplication chosenApplication;
-        if (totalCost1 < totalCost2) {
-            chosenApplication = processedApplication1;
-        } else {
-            chosenApplication = processedApplication2;
+        
+        // Check if both applications were approved
+        if (processedApplication1.isStatus() && processedApplication2.isStatus()) {
+            // Compare loan costs and choose the application with the lowest costs
+            double totalCost1 = processedApplication1.getLoanEstimate().getEstimatedTotalMonthlyPayment();
+            double totalCost2 = processedApplication2.getLoanEstimate().getEstimatedTotalMonthlyPayment();
+        
+            ProcessedApplication chosenApplication;
+            if (totalCost1 < totalCost2) {
+                chosenApplication = processedApplication1;
+            } 
+            else {
+                chosenApplication = processedApplication2;
+            }
+        
+            // Close the chosen application
+            ClosedApplication closedApplication = mortgageImplementer.close(chosenApplication);
+        
+            // Print the chosen application details
+            System.out.println("Chosen Application Number: " + closedApplication.getApplicationNumber());
+            System.out.println("Chosen Lender: " + closedApplication.getLender().getLenderNumber());
+            System.out.println("Chosen Loan Costs: " + closedApplication.getLoanEstimate().getEstimatedTotalMonthlyPayment());
+        } 
+        else if (processedApplication1.isStatus() || processedApplication2.isStatus()) {
+            // Choose the approved application
+            ProcessedApplication approvedApplication;
+            if (processedApplication1.isStatus()) {
+                approvedApplication = processedApplication1;
+            } else {
+                approvedApplication = processedApplication2;
+            }
+        
+            // Close the approved application
+            ClosedApplication closedApplication = mortgageImplementer.close(approvedApplication);
+        
+            // Print the closed application details
+            System.out.println("Chosen Application Number: " + closedApplication.getApplicationNumber());
+            System.out.println("Chosen Lender: " + closedApplication.getLender().getLenderNumber());
+            System.out.println("Chosen Loan Costs: " + closedApplication.getLoanEstimate().getEstimatedTotalMonthlyPayment());
+        } 
+        else {
+            System.out.println("Both applications were rejected. No application will be closed.");
         }
-
-        // Close the chosen application
-        ClosedApplication closedApplication = mortgageImplementer.close(chosenApplication);
-
-        // Print the chosen application details
-        System.out.println("Chosen Application Number: " + closedApplication.getApplicationNumber());
-        System.out.println("Chosen Lender: " + closedApplication.getLender().getLenderNumber());
-        System.out.println("Chosen Loan Costs: " + closedApplication.getLoanEstimate().getEstimatedTotalMonthlyPayment());
     }
 }
