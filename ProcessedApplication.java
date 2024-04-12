@@ -31,10 +31,10 @@ public class ProcessedApplication extends Application {
     private LoanEstimate createLoanEstimate(boolean status, Borrower borrower, Property property, Lender lender) {
         if (status) {
             double loanAmount = property.getExpectedSalesPrice();
-            int loanTerm = 30; // Assuming a 30-year loan term (adjust as needed)
+            int loanTerm = 30; // Assuming a 30-year loan term
             double interestRate = lender.getInterestRate();
-            double mortgageInsurance = 0.0; // Assuming no mortgage insurance (adjust as needed)
-            double estimatedEscrow = property.getRealEstateTaxes() / 12.0 + property.getHoaDues() / 12.0; // Assuming escrow includes property taxes and HOA dues
+            double mortgageInsurance = 0.00; // Assuming no mortgage insurance
+            double estimatedEscrow = (property.getRealEstateTaxes() + property.getHoaDues()) / 12.0; // Assuming escrow includes property taxes and HOA dues
             return new LoanEstimate(borrower.getName(), loanAmount, loanTerm, interestRate, mortgageInsurance, estimatedEscrow);
         } else {
             return new LoanEstimate("", -1, -1, -1, -1, -1);

@@ -20,9 +20,9 @@ public class LoanEstimate {
     }
 
     private double calculateMonthlyPrincipalAndInterest(double loanAmount, int loanTerm, double interestRate) {
-        double monthlyInterestRate = interestRate / 12.0 / 100.0;
+        double monthlyInterestRate = interestRate / 12.0;
         int numberOfPayments = loanTerm * 12;
-        double monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+        double monthlyPayment = loanAmount * monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
         return monthlyPayment;
     }
 
