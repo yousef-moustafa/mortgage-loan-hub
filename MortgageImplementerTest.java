@@ -4,8 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
 
+/**
+ * The {@code MortgageImplementerTest} class serves as a test case for the {@code MortgageImplementer} class.
+ * It demonstrates the process of initializing a mortgage market, creating mortgage applications, processing them,
+ * and closing them based on certain criteria.
+ */
 public class MortgageImplementerTest {
 
+    /**
+     * The main method acts as the entry point of the test case.
+     * It initializes a mortgage market, creates borrowers, lenders, and properties,
+     * and then simulates the mortgage application process.
+     * Based on the processed applications, it determines which application to close.
+     * 
+     * @param args The command-line arguments (unused).
+     */
     public static void main(String[] args) {
         // Initialize mortgage market
         MortgageImplementer mortgageImplementer = new MortgageImplementer();
@@ -17,7 +30,7 @@ public class MortgageImplementerTest {
         Lender lender2 = mortgageMarket.getLenders().get(1);
         Property property = mortgageMarket.getProperties().get(0);
 
-        // Assign values to attributes using setter methods
+        // Assign values to attributes using setter methods for borrower
         borrower.setName("John Doe");
         borrower.setSsn("123-45-6789");
         borrower.setHomePhone("123-456-7890");
@@ -25,7 +38,6 @@ public class MortgageImplementerTest {
         // Set other borrower attributes using setter methods
         Income income = new Income(150000, 10000, 15000, 0, 5000, 0, 0);
         Employment employment = new Employment("Example Corp", "123-456-7890", "123 Main St", 5, "Software Engineer", income);
-        
         BankAccount[] bankAccounts = {
         new BankAccount("12345678", "Checking", true, /* openDate */ null, new String[] {"John Doe"}, 50000.0, null, 0.05, 0.0, null, 0.0),
         new BankAccount("87654321", "Savings", true, /* openDate */ null, new String[] {"John Doe"}, 100000.0, null, 0.1, 0.0, null, 0.0)
@@ -36,22 +48,16 @@ public class MortgageImplementerTest {
         double[] investments = {50000.0, 75000.0}; // Investments worth $125,000
         double proceedsFromSaleOfHome = 0.0;
         double giftedFunds = 0.0;
-        
         Assets assets = new Assets(bankAccounts, properties, investments, proceedsFromSaleOfHome, giftedFunds);
-
-        
         Debts debts = new Debts(300000, 0.0, 0.0, 0.0, 15000, 5000, 0.0, 0.0, 0.0);
         List<LocalDate> foreclosureDates = new ArrayList<>();
         CreditHistory creditHistory = new CreditHistory(0, 0, 0, 0, false, null, foreclosureDates, false);
-        
         borrower.setEmployment(employment);
         borrower.setIncome(income);
         borrower.setAssets(assets);
         borrower.setDebts(debts);
         borrower.setCreditHistory(creditHistory);
         
-        //System.out.println(borrower);
-
         // Assign values to lender1 attributes using setter methods
         lender1.setLenderNumber(1);
         lender1.setDtiRatio(3.0);

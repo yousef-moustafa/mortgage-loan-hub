@@ -1,17 +1,25 @@
 #BlueJ class context
 comment0.target=ClosingDisclosure
+comment0.text=\r\n\ The\ {@code\ ClosingDisclosure}\ class\ represents\ a\ closing\ disclosure\ document\ in\ a\ real\ estate\ transaction.\r\n\ It\ contains\ information\ about\ the\ loan\ ID,\ closing\ date,\ and\ calculated\ closing\ costs.\r\n
 comment1.params=loanId\ closingDate
 comment1.target=ClosingDisclosure(java.lang.String,\ java.time.LocalDate)
+comment1.text=\r\n\ Constructs\ a\ new\ {@code\ ClosingDisclosure}\ object\ with\ specified\ loan\ ID\ and\ closing\ date.\r\n\ The\ closing\ costs\ are\ calculated\ automatically\ based\ on\ a\ percentage\ of\ the\ loan\ amount.\r\n\ \r\n\ @param\ loanId\ The\ unique\ identifier\ of\ the\ loan.\r\n\ @param\ closingDate\ The\ date\ of\ the\ closing.\r\n
 comment2.params=
 comment2.target=java.lang.String\ getLoanId()
+comment2.text=\r\n\ Returns\ the\ loan\ ID.\r\n\ \r\n\ @return\ The\ loan\ ID.\r\n
 comment3.params=loanId
 comment3.target=void\ setLoanId(java.lang.String)
+comment3.text=\r\n\ Sets\ the\ loan\ ID\ and\ recalculates\ the\ closing\ costs.\r\n\ \r\n\ @param\ loanId\ The\ new\ loan\ ID.\r\n
 comment4.params=
 comment4.target=java.time.LocalDate\ getClosingDate()
+comment4.text=\r\n\ Returns\ the\ closing\ date.\r\n\ \r\n\ @return\ The\ closing\ date.\r\n
 comment5.params=closingDate
 comment5.target=void\ setClosingDate(java.time.LocalDate)
+comment5.text=\r\n\ Sets\ the\ closing\ date.\r\n\ \r\n\ @param\ closingDate\ The\ new\ closing\ date.\r\n
 comment6.params=
 comment6.target=double\ getClosingCosts()
+comment6.text=\r\n\ Returns\ the\ closing\ costs\ associated\ with\ the\ loan.\r\n\ \r\n\ @return\ The\ closing\ costs.\r\n
 comment7.params=
 comment7.target=void\ calculateClosingCosts()
+comment7.text=\r\n\ Calculates\ the\ closing\ costs\ based\ on\ a\ random\ percentage\ of\ the\ loan\ amount.\r\n\ For\ demonstration\ purposes,\ a\ fixed\ loan\ amount\ of\ $200,000\ is\ used.\r\n
 numComments=8

@@ -1,5 +1,7 @@
 #BlueJ class context
 comment0.target=MortgageImplementerTest
+comment0.text=\r\n\ The\ {@code\ MortgageImplementerTest}\ class\ serves\ as\ a\ test\ case\ for\ the\ {@code\ MortgageImplementer}\ class.\r\n\ It\ demonstrates\ the\ process\ of\ initializing\ a\ mortgage\ market,\ creating\ mortgage\ applications,\ processing\ them,\r\n\ and\ closing\ them\ based\ on\ certain\ criteria.\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ The\ main\ method\ acts\ as\ the\ entry\ point\ of\ the\ test\ case.\r\n\ It\ initializes\ a\ mortgage\ market,\ creates\ borrowers,\ lenders,\ and\ properties,\r\n\ and\ then\ simulates\ the\ mortgage\ application\ process.\r\n\ Based\ on\ the\ processed\ applications,\ it\ determines\ which\ application\ to\ close.\r\n\ \r\n\ @param\ args\ The\ command-line\ arguments\ (unused).\r\n
 numComments=2

@@ -1,13 +1,32 @@
 import java.util.*;
 
-public class MortgageImplementer implements MLH
-{
-    // setting up all roles of mortgage market
+/**
+ * The {@code MortgageImplementer} class implements the {@code MLH} interface to handle mortgage-related operations.
+ */
+public class MortgageImplementer implements MLH {
+    
+    // Fields
+    
+    /** 
+     * The mortgage market containing borrowers, lenders, and properties.
+     */
     private MortgageMarket mortgageMarket;
     
-    //counter variable to generate unique application numbers
+    /** 
+     * Counter variable to generate unique application numbers.
+     */
     private static int applicationCounter = 1;
     
+    // Methods
+    
+    /**
+     * Initializes the mortgage market with the specified number of borrowers, properties, and lenders.
+     * 
+     * @param numOfBorrowers The number of borrowers to initialize.
+     * @param numOfProperties The number of properties to initialize.
+     * @param numOfLenders The number of lenders to initialize.
+     * @return The initialized mortgage market.
+     */
     @Override
     public MortgageMarket initializeMortgageMarket(int numOfBorrowers, int numOfProperties, int numOfLenders) {
         mortgageMarket = new MortgageMarket();
@@ -31,10 +50,16 @@ public class MortgageImplementer implements MLH
         return mortgageMarket;
     }
 
-    // creates an application mortgage to a lender by a borrower on a property
+    /**
+     * Creates a mortgage application to a lender by a borrower for a property.
+     * 
+     * @param b The borrower applying for the mortgage.
+     * @param p The property for which the mortgage is being applied.
+     * @param l The lender to whom the mortgage application is submitted.
+     * @return The created application.
+     */
     @Override
-    public Application apply (Borrower b, Property p, Lender l){
-        
+    public Application apply(Borrower b, Property p, Lender l) {
         // Create a new Application object with the provided borrower, property, and lender
         Application application = new Application(applicationCounter++, b, l, p);
         
@@ -42,7 +67,12 @@ public class MortgageImplementer implements MLH
         return application;  
     };
     
-    //process the mortgage application to determine status and total price of transaction
+    /**
+     * Processes the mortgage application to determine its status and total price of the transaction.
+     * 
+     * @param a The mortgage application to be processed.
+     * @return The processed application.
+     */
     @Override
     public ProcessedApplication process(Application a) {
         Borrower borrower = a.getBorrower();
@@ -56,7 +86,12 @@ public class MortgageImplementer implements MLH
         return processedApplication;
     }
     
-    //Closing process
+    /**
+     * Performs the closing process for the mortgage application.
+     * 
+     * @param pa The processed mortgage application to be closed.
+     * @return The closed application.
+     */
     @Override
     public ClosedApplication close(ProcessedApplication pa) {
         Borrower borrower = pa.getBorrower();
