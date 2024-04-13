@@ -1,11 +1,16 @@
 #BlueJ class context
 comment0.target=ClosedApplication
+comment0.text=\r\n\ The\ ClosedApplication\ class\ represents\ a\ processed\ mortgage\ application\ that\ has\ been\ closed.\r\n\ It\ extends\ the\ ProcessedApplication\ class\ and\ includes\ additional\ functionality\ for\ managing\ closing\ disclosures.\r\n
 comment1.params=applicationNumber\ borrower\ lender\ property
 comment1.target=ClosedApplication(int,\ Borrower,\ Lender,\ Property)
+comment1.text=\r\n\ Constructs\ a\ new\ ClosedApplication\ with\ the\ specified\ application\ details.\r\n\ @param\ applicationNumber\ The\ application\ number.\r\n\ @param\ borrower\ The\ borrower\ associated\ with\ the\ application.\r\n\ @param\ lender\ The\ lender\ associated\ with\ the\ application.\r\n\ @param\ property\ The\ property\ associated\ with\ the\ application.\r\n
 comment2.params=
 comment2.target=ClosingDisclosure\ createClosingDisclosure()
+comment2.text=\r\n\ Creates\ a\ ClosingDisclosure\ for\ the\ closed\ application.\r\n\ Generates\ a\ unique\ loan\ ID\ and\ sets\ the\ closing\ date\ to\ today's\ date.\r\n\ @return\ The\ created\ ClosingDisclosure.\r\n
 comment3.params=
 comment3.target=ClosingDisclosure\ getClosingDisclosure()
+comment3.text=\r\n\ Retrieves\ the\ closing\ disclosure\ associated\ with\ the\ closed\ application.\r\n\ @return\ The\ ClosingDisclosure.\r\n
 comment4.params=closingDisclosure
 comment4.target=void\ setClosingDisclosure(ClosingDisclosure)
+comment4.text=\r\n\ Sets\ the\ closing\ disclosure\ for\ the\ closed\ application.\r\n\ @param\ closingDisclosure\ The\ ClosingDisclosure\ to\ set.\r\n
 numComments=5

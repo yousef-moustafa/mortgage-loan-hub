@@ -1,13 +1,19 @@
 #BlueJ class context
 comment0.target=ProcessedApplication
+comment0.text=\r\n\ The\ ProcessedApplication\ class\ represents\ a\ mortgage\ application\ that\ has\ been\ processed\ by\ a\ lender.\r\n\ It\ extends\ the\ Application\ class\ and\ includes\ additional\ functionality\ for\ determining\ approval\ status\ and\ generating\ loan\ estimates.\r\n
 comment1.params=applicationNumber\ borrower\ lender\ property
 comment1.target=ProcessedApplication(int,\ Borrower,\ Lender,\ Property)
+comment1.text=\r\n\ Constructs\ a\ new\ ProcessedApplication\ with\ the\ specified\ application\ details.\r\n\ Determines\ the\ approval\ status\ based\ on\ borrower's\ financial\ information\ and\ generates\ a\ loan\ estimate.\r\n\ @param\ applicationNumber\ The\ application\ number.\r\n\ @param\ borrower\ The\ borrower\ associated\ with\ the\ application.\r\n\ @param\ lender\ The\ lender\ associated\ with\ the\ application.\r\n\ @param\ property\ The\ property\ associated\ with\ the\ application.\r\n
 comment2.params=borrower\ lender
 comment2.target=boolean\ determineStatus(Borrower,\ Lender)
+comment2.text=\r\n\ Determines\ the\ approval\ status\ of\ the\ application\ based\ on\ borrower's\ financial\ information\ and\ lender's\ criteria.\r\n\ @param\ borrower\ The\ borrower\ associated\ with\ the\ application.\r\n\ @param\ lender\ The\ lender\ associated\ with\ the\ application.\r\n\ @return\ True\ if\ the\ application\ is\ approved,\ false\ otherwise.\r\n
 comment3.params=status\ borrower\ property\ lender
 comment3.target=LoanEstimate\ createLoanEstimate(boolean,\ Borrower,\ Property,\ Lender)
+comment3.text=\r\n\ Creates\ a\ loan\ estimate\ for\ the\ processed\ application.\r\n\ If\ the\ application\ is\ approved,\ generates\ a\ loan\ estimate\ with\ loan\ details.\r\n\ If\ the\ application\ is\ rejected,\ generates\ a\ blank\ loan\ estimate.\r\n\ @param\ status\ The\ approval\ status\ of\ the\ application.\r\n\ @param\ borrower\ The\ borrower\ associated\ with\ the\ application.\r\n\ @param\ property\ The\ property\ associated\ with\ the\ application.\r\n\ @param\ lender\ The\ lender\ associated\ with\ the\ application.\r\n\ @return\ The\ created\ LoanEstimate.\r\n
 comment4.params=
 comment4.target=boolean\ isStatus()
+comment4.text=\r\n\ Retrieves\ the\ approval\ status\ of\ the\ processed\ application.\r\n\ @return\ True\ if\ the\ application\ is\ approved,\ false\ otherwise.\r\n
 comment5.params=
 comment5.target=LoanEstimate\ getLoanEstimate()
+comment5.text=\r\n\ Retrieves\ the\ loan\ estimate\ associated\ with\ the\ processed\ application.\r\n\ @return\ The\ LoanEstimate.\r\n
 numComments=6
