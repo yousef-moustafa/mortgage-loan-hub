@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=Borrower
+comment0.text=\r\n\ The\ Borrower\ class\ represents\ an\ individual\ applying\ for\ a\ loan.\r\n\ It\ includes\ personal\ information\ such\ as\ name,\ social\ security\ number\ (SSN),\r\n\ home\ phone\ number,\ date\ of\ birth\ (DOB),\ employment\ details,\ income\ details,\r\n\ asset\ details,\ debt\ details,\ and\ credit\ history.\r\n
 comment1.params=
 comment1.target=Borrower()
+comment1.text=\r\n\ Constructs\ a\ Borrower\ object\ with\ default\ values.\r\n
 comment10.params=dob
 comment10.target=void\ setDob(java.lang.String)
 comment11.params=
@@ -24,10 +26,12 @@ comment19.params=
 comment19.target=CreditHistory\ getCreditHistory()
 comment2.params=name\ ssn\ homePhone\ dob\ employment\ income\ assets\ debts\ creditHistory
 comment2.target=Borrower(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ Employment,\ Income,\ Assets,\ Debts,\ CreditHistory)
+comment2.text=\r\n\ Constructs\ a\ Borrower\ object\ with\ the\ provided\ details.\r\n\ \r\n\ @param\ name\ \ \ \ \ \ \ \ \ \ Name\ of\ the\ borrower\r\n\ @param\ ssn\ \ \ \ \ \ \ \ \ \ \ Social\ security\ number\ of\ the\ borrower\r\n\ @param\ homePhone\ \ \ \ \ Home\ phone\ number\ of\ the\ borrower\r\n\ @param\ dob\ \ \ \ \ \ \ \ \ \ \ Date\ of\ birth\ of\ the\ borrower\r\n\ @param\ employment\ \ \ \ Employment\ details\ of\ the\ borrower\r\n\ @param\ income\ \ \ \ \ \ \ \ Income\ details\ of\ the\ borrower\r\n\ @param\ assets\ \ \ \ \ \ \ \ Asset\ details\ of\ the\ borrower\r\n\ @param\ debts\ \ \ \ \ \ \ \ \ Debt\ details\ of\ the\ borrower\r\n\ @param\ creditHistory\ Credit\ history\ of\ the\ borrower\r\n
 comment20.params=creditHistory
 comment20.target=void\ setCreditHistory(CreditHistory)
 comment21.params=
 comment21.target=java.lang.String\ toString()
+comment21.text=\r\n\ Returns\ a\ string\ representation\ of\ the\ Borrower\ object.\r\n\ \r\n\ @return\ String\ representation\ of\ the\ Borrower\ object\r\n
 comment3.params=
 comment3.target=java.lang.String\ getName()
 comment4.params=name

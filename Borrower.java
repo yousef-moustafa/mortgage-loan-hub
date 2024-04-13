@@ -1,18 +1,41 @@
+/**
+ * The Borrower class represents an individual applying for a loan.
+ * It includes personal information such as name, social security number (SSN),
+ * home phone number, date of birth (DOB), employment details, income details,
+ * asset details, debt details, and credit history.
+ */
 public class Borrower {
-    private String name;
-    private String ssn;
-    private String homePhone;
-    private String dob;
-    private Employment employment;
-    private Income income;
-    private Assets assets;
-    private Debts debts;
-    private CreditHistory creditHistory;
+    private String name; // Name of the borrower
+    private String ssn; // Social security number of the borrower
+    private String homePhone; // Home phone number of the borrower
+    private String dob; // Date of birth of the borrower
+    private Employment employment; // Employment details of the borrower
+    private Income income; // Income details of the borrower
+    private Assets assets; // Asset details of the borrower
+    private Debts debts; // Debt details of the borrower
+    private CreditHistory creditHistory; // Credit history of the borrower
     
+    /**
+     * Constructs a Borrower object with default values.
+     */
     public Borrower() {
     }
 
-    public Borrower(String name, String ssn, String homePhone, String dob, Employment employment, Income income, Assets assets, Debts debts, CreditHistory creditHistory) {
+    /**
+     * Constructs a Borrower object with the provided details.
+     * 
+     * @param name          Name of the borrower
+     * @param ssn           Social security number of the borrower
+     * @param homePhone     Home phone number of the borrower
+     * @param dob           Date of birth of the borrower
+     * @param employment    Employment details of the borrower
+     * @param income        Income details of the borrower
+     * @param assets        Asset details of the borrower
+     * @param debts         Debt details of the borrower
+     * @param creditHistory Credit history of the borrower
+     */
+    public Borrower(String name, String ssn, String homePhone, String dob, Employment employment,
+                    Income income, Assets assets, Debts debts, CreditHistory creditHistory) {
         this.name = name;
         this.ssn = ssn;
         this.homePhone = homePhone;
@@ -97,6 +120,11 @@ public class Borrower {
         this.creditHistory = creditHistory;
     }
     
+    /**
+     * Returns a string representation of the Borrower object.
+     * 
+     * @return String representation of the Borrower object
+     */
     @Override
     public String toString() {
         return "Borrower{" +

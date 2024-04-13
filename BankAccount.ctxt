@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=BankAccount
+comment0.text=\r\n\ The\ BankAccount\ class\ represents\ a\ bank\ account.\r\n\ It\ includes\ details\ such\ as\ account\ number,\ account\ type,\ open\ status,\ open\ date,\r\n\ account\ holders,\ current\ balance,\ balance\ history,\ interest\ rate,\ interest\ paid,\r\n\ closed\ date,\ and\ closed\ balance.\r\n
 comment1.params=accountNumber\ accountType\ isOpen\ openDate\ accountHolders\ currentBalance\ balanceHistory\ interestRate\ interestPaid\ closedDate\ closedBalance
 comment1.target=BankAccount(java.lang.String,\ java.lang.String,\ boolean,\ java.util.Date,\ java.lang.String[],\ double,\ double[],\ double,\ double,\ java.util.Date,\ double)
+comment1.text=\r\n\ Constructs\ a\ BankAccount\ object\ with\ the\ provided\ account\ details.\r\n\ \r\n\ @param\ accountNumber\ \ \ Account\ number\r\n\ @param\ accountType\ \ \ \ \ Account\ type\r\n\ @param\ isOpen\ \ \ \ \ \ \ \ \ \ Indicates\ if\ the\ account\ is\ open\r\n\ @param\ openDate\ \ \ \ \ \ \ \ Date\ when\ the\ account\ was\ opened\r\n\ @param\ accountHolders\ \ List\ of\ account\ holders\r\n\ @param\ currentBalance\ \ Current\ balance\ of\ the\ account\r\n\ @param\ balanceHistory\ \ History\ of\ balances\ over\ time\r\n\ @param\ interestRate\ \ \ \ Interest\ rate\ of\ the\ account\r\n\ @param\ interestPaid\ \ \ \ Amount\ of\ interest\ paid\r\n\ @param\ closedDate\ \ \ \ \ \ Date\ when\ the\ account\ was\ closed\r\n\ @param\ closedBalance\ \ \ Balance\ at\ the\ time\ of\ account\ closure\r\n
 comment10.params=
 comment10.target=double\ getInterestPaid()
 comment11.params=
@@ -10,6 +12,7 @@ comment12.params=
 comment12.target=double\ getClosedBalance()
 comment13.params=
 comment13.target=java.lang.String\ toString()
+comment13.text=\r\n\ Returns\ a\ string\ representation\ of\ the\ BankAccount\ object.\r\n\ \r\n\ @return\ String\ representation\ of\ the\ BankAccount\ object\r\n
 comment2.params=
 comment2.target=java.lang.String\ getAccountNumber()
 comment3.params=

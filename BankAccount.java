@@ -1,21 +1,41 @@
 import java.util.Date;
-import java.util.*;
+import java.util.Arrays;
 
+/**
+ * The BankAccount class represents a bank account.
+ * It includes details such as account number, account type, open status, open date,
+ * account holders, current balance, balance history, interest rate, interest paid,
+ * closed date, and closed balance.
+ */
 public class BankAccount {
     // Fields
-    private String accountNumber;
-    private String accountType;
-    private boolean isOpen;
-    private Date openDate;
-    private String[] accountHolders;
-    private double currentBalance;
-    private double[] balanceHistory;
-    private double interestRate;
-    private double interestPaid;
-    private Date closedDate;
-    private double closedBalance;
+    private String accountNumber; // Account number
+    private String accountType; // Account type
+    private boolean isOpen; // Indicates if the account is open
+    private Date openDate; // Date when the account was opened
+    private String[] accountHolders; // List of account holders
+    private double currentBalance; // Current balance of the account
+    private double[] balanceHistory; // History of balances over time
+    private double interestRate; // Interest rate of the account
+    private double interestPaid; // Amount of interest paid
+    private Date closedDate; // Date when the account was closed
+    private double closedBalance; // Balance at the time of account closure
 
-    // Constructor
+    /**
+     * Constructs a BankAccount object with the provided account details.
+     * 
+     * @param accountNumber   Account number
+     * @param accountType     Account type
+     * @param isOpen          Indicates if the account is open
+     * @param openDate        Date when the account was opened
+     * @param accountHolders  List of account holders
+     * @param currentBalance  Current balance of the account
+     * @param balanceHistory  History of balances over time
+     * @param interestRate    Interest rate of the account
+     * @param interestPaid    Amount of interest paid
+     * @param closedDate      Date when the account was closed
+     * @param closedBalance   Balance at the time of account closure
+     */
     public BankAccount(String accountNumber, String accountType, boolean isOpen,
                        Date openDate, String[] accountHolders, double currentBalance,
                        double[] balanceHistory, double interestRate, double interestPaid,
@@ -77,7 +97,12 @@ public class BankAccount {
     public double getClosedBalance() {
         return closedBalance;
     }
-    
+
+    /**
+     * Returns a string representation of the BankAccount object.
+     * 
+     * @return String representation of the BankAccount object
+     */
     @Override
     public String toString() {
         return "BankAccount{" +
